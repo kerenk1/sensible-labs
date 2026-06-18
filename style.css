@@ -1,4 +1,3 @@
-/* איפוס מלא */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -9,250 +8,127 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* סרגל ניווט קבוע (Wix Style) */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    z-index: 1000;
+    position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+    background: #ffffff; display: flex; justify-content: space-between;
+    align-items: center; padding: 0 40px; z-index: 1000;
     border-bottom: 1px solid #e1e1e1;
 }
 
 .logo-img { height: 38px; width: auto; }
 
 .nav-links {
-    display: flex;
-    background-color: #79C2F2;
-    border-radius: 6px;
-    overflow: hidden;
+    display: flex; background-color: #79C2F2;
+    border-radius: 6px; overflow: hidden;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 12px 22px;
-    font-size: 15px;
-    font-weight: 600;
-    transition: background-color 0.15s ease;
+    text-decoration: none; color: #ffffff; padding: 12px 22px;
+    font-size: 15px; font-weight: 600; transition: background-color 0.15s ease;
 }
 
-.nav-links a.active, .nav-links a:hover {
-    background-color: #1a365d;
-}
+.nav-links a.active, .nav-links a:hover { background-color: #1a365d; }
 
-/* ניהול עמודים */
 main { margin-top: 70px; min-height: calc(100vh - 70px); }
 .page-section { padding: 80px 40px 140px 40px; width: 100%; }
 .hidden { display: none !important; }
 
-/* עמוד 1: עמוד הבית (Hero) */
+/* Hero */
 .hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding-top: 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1300px; margin: 0 auto; padding-top: 60px;
 }
 
-.hero-text-block h1 {
-    font-size: 70px;
-    font-weight: 800;
-    line-height: 1.05;
-    margin-bottom: 25px;
-}
-
-.hero-text-block p {
-    font-size: 22px;
-    color: #4A5568;
-    line-height: 1.5;
-    margin-bottom: 45px;
-}
+.hero-text-block h1 { font-size: 70px; font-weight: 800; line-height: 1.05; margin-bottom: 25px; }
+.hero-text-block p { font-size: 22px; color: #4A5568; line-height: 1.5; margin-bottom: 45px; }
 
 .store-buttons { display: flex; gap: 15px; }
 .store-buttons img { height: 41px; cursor: pointer; }
 
-.mockup-img { max-width: 688px; width: 100%; }
-
-/* למה אנשים מפסיקים טיפול (גריד עם קווים) */
-.reasons-why-container {
-    text-align: center;
-    max-width: 1100px;
-    margin: 100px auto;
-}
-
-.reasons-why-container h2 {
-    font-size: 38px;
-    font-weight: 800;
-    margin-bottom: 70px;
-}
-
-.reasons-why-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border: 1px solid #d4d4d4;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.reason-card {
-    padding: 50px 30px;
-    background: #ffffff;
+/* Hero Track & GIF Positioning */
+.phone-track-container {
+    max-width: 688px;
+    width: 100%;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    border-right: 1px solid #d4d4d4;
+    align-items: center;
 }
 
+.phone-track-base {
+    position: relative;
+    z-index: 2; /* המסגרת הסטטית עם החלון השקוף נמצאת מעל */
+    width: 100%;
+    height: auto;
+}
+
+.gameplay-gif-layer {
+    position: absolute;
+    z-index: 1; /* ה-GIF יושב מתחת למסגרת */
+    /* המספרים האלו הם הערכה יחסית לגודל המסך כדי שישב בתוך החלון */
+    top: 15%; 
+    left: 22%;
+    width: 45%; 
+    height: auto;
+    object-fit: cover;
+}
+
+/* סיבות להפסקה */
+.reasons-why-container { text-align: center; max-width: 1100px; margin: 100px auto; }
+.reasons-why-container h2 { font-size: 38px; font-weight: 800; margin-bottom: 70px; }
+.reasons-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #d4d4d4; border-radius: 12px; overflow: hidden; }
+.reason-card { padding: 50px 30px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 1px solid #d4d4d4; }
 .reason-card:last-child { border-right: none; }
 .reason-card img { height: 48px; margin-bottom: 25px; }
-.reason-card p {
-    font-size: 16px;
-    line-height: 1.4;
-    font-weight: 500;
-}
+.reason-card p { font-size: 16px; line-height: 1.4; font-weight: 500; }
 
-/* סעיפים קטנים (אדום בהיר) */
-.cbt-subtle-reasons {
-    max-width: 1100px;
-    margin: 100px auto;
-    text-align: center;
-}
-
-.cbt-subtle-reasons h3 {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 60px;
-}
-
-.subtle-reasons-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
+.cbt-subtle-reasons { max-width: 1100px; margin: 100px auto; text-align: center; }
+.cbt-subtle-reasons h3 { font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 60px; }
+.subtle-reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .subtle-card { padding: 40px; border-radius: 20px; text-align: center; }
 .subtle-card h4 { font-size: 20px; font-weight: 700; color: #c53030; margin-bottom: 12px; }
 .subtle-card p { font-size: 16px; }
+.subtle-pastel-red { background-color: #fce8e6; border: 1px solid #feb2b2; }
 
-.subtle-pastel-red {
-    background-color: #fce8e6;
-    border: 1px solid #feb2b2;
-}
-
-/* עמוד 2: דף המשחק והדמות (פיצול מורכב) */
+/* המשחק */
 .split-bg { padding: 0; }
-
-.game-story-layout {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    position: relative;
-    min-height: calc(100vh - 70px);
-}
-
-.cyberpunk-section {
-    background-color: #111827;
-    color: #ffffff;
-    padding: 100px 60px 100px calc(50% - 600px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
+.game-story-layout { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; position: relative; min-height: calc(100vh - 70px); }
+.cyberpunk-section { background-color: #111827; color: #ffffff; padding: 100px 60px 100px calc(50% - 600px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
 .cyberpunk-section h2 { font-size: 48px; font-weight: 800; margin-bottom: 25px; }
 .cyberpunk-section p { font-size: 19px; line-height: 1.6; margin-bottom: 20px; max-width: 500px; }
-
-.start-therapy-btn {
-    display: inline-block;
-    padding: 14px 30px;
-    background-color: #ecfdf5;
-    color: #111;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 700;
-    margin-top: 30px;
-}
-
-.nature-section {
-    background-color: #ECFDF5;
-    padding: 100px calc(50% - 600px) 100px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    background-size: cover;
-}
-
-/* מיקום איב מעל שני הרקעים */
-.character-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-}
-
+.start-therapy-btn { display: inline-block; padding: 14px 30px; background-color: #ecfdf5; color: #111; text-decoration: none; border-radius: 8px; font-weight: 700; margin-top: 30px; }
+.nature-section { background-color: #ECFDF5; padding: 100px calc(50% - 600px) 100px 60px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; background-size: cover; }
+.character-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; }
 .eve-img { height: 80vh; max-height: 779px; }
-
 .story-bubble { padding: 30px; border-radius: 24px; margin-top: 30px; font-size: 16px; color: #111; max-width: 450px; line-height: 1.6;}
 .bubble-pink { background-color: rgba(254, 178, 178, 0.95); }
 .bubble-orange { background-color: rgba(254, 215, 170, 0.95); margin-top: 0;}
 
-/* עמוד 3: אודות, מדע וצוות */
+/* שאלות נפוצות */
 .fa-blocks-section { max-width: 1300px; margin: 0 auto; }
-
 .faq-header { text-align: center; margin-bottom: 80px; }
 .we-are-sensible { font-size: 15px; font-weight: 600; color: #4A5568; margin-bottom: 8px; display: block; }
 .faq-header h2 { font-size: 42px; font-weight: 800; }
-
 .blocks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
-
 .block-card { padding: 50px; border-radius: 28px; display: flex; flex-direction: column; justify-content: flex-start; }
 .block-card h3 { font-size: 26px; font-weight: 700; margin-bottom: 25px; color: #111; line-height: 1.2; }
 .block-card p { font-size: 16px; line-height: 1.7; margin-bottom: 15px; }
-
 .block-pastel-red { background-color: #FCD6D6; border: 1px solid #feb2b2; }
 .block-pastel-purple { background-color: #E0E7FF; border: 1px solid #c7d2fe; }
-
 .block-special-reasons { position: relative; padding-bottom: 120px; }
-
-.stat-bubble-wrap {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 140px;
-    height: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+.stat-bubble-wrap { position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); width: 140px; height: 140px; display: flex; justify-content: center; align-items: center; }
 .stat-bubble-bg { width: 100%; height: 100%; }
 .stat-number { position: absolute; font-size: 50px; font-weight: 800; color: #111; }
-
 .reasons-2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 100px; }
 .reason-left { display: flex; flex-direction: column; gap: 40px; }
 .chart-stat-img { max-width: 200px; margin: 0 auto; }
 .sub-stat-block { padding: 40px; border-radius: 24px; }
-
 .reason-right { position: relative; padding-bottom: 140px; }
 .retention-bubble-wrap { position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%); text-align: center; }
 .retention-stat { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); font-size: 42px; font-weight: 800; color: #111; }
 .retention-text { position: absolute; top: 85px; left: 50%; transform: translateX(-50%); font-size: 13px; font-weight: 600; color: #111; line-height: 1.2; width: 120px; }
 
-/* הצוות וההרשמה */
+/* צוות */
 .team-and-signup-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 80px; }
 .team-column h2, .signup-column h2 { font-size: 30px; margin-bottom: 50px; font-weight: 800; }
 .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
@@ -260,33 +136,22 @@ main { margin-top: 70px; min-height: calc(100vh - 70px); }
 .member-card img { width: 110px; height: 110px; border-radius: 50%; margin-bottom: 20px; object-fit: cover; }
 .member-card h4 { font-size: 17px; margin-bottom: 8px; font-weight: 700; }
 .member-card p { font-size: 15px; color: #4A5568; line-height: 1.3; }
-
 .signup-column { display: flex; flex-direction: column; justify-content: flex-start; }
 .signup-box { background-color: #e0f2fe; padding: 50px; border-radius: 24px; text-align: center; }
 .signup-box h3 { font-size: 20px; margin-bottom: 12px; font-weight: 700; }
 .signup-box p { font-size: 16px; margin-bottom: 25px; }
-
 .signup-form { display: flex; gap: 12px; }
 .signup-form input { flex: 1; padding: 14px; border: 1px solid #bae6fd; border-radius: 8px; font-size: 15px; }
 .signup-form button { padding: 14px 28px; background-color: #0284c7; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
 
-/* עמוד 4: פידבק ויצירת קשר (פס אדום) */
+/* יצירת קשר */
 .contact-section-full { padding: 0; }
 .red-feedback-bar { background-color: #c53030; width: 100%; height: 320px; margin-top: 100px; position: relative; }
 .feedback-bubble { background-color: #ffffff; width: 280px; padding: 40px; border-radius: 28px; position: absolute; top: -60px; left: 100px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; }
 .mascot-img { height: 110px; margin-bottom: 20px; }
 .bubble-title { font-size: 17px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
 .bubble-subtitle { font-size: 15px; margin-bottom: 25px; line-height: 1.4; color: #4a5568; }
-
-.contact-us-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #111;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 700;
-}
+.contact-us-btn { display: inline-block; padding: 12px 24px; background-color: #111; color: white; text-decoration: none; border-radius: 8px; font-weight: 700; }
 
 /* פוטר */
 .footer { background-color: #ffffff; text-align: center; padding: 50px 20px; border-top: 1px solid #e1e1e1; }
@@ -297,16 +162,5 @@ main { margin-top: 70px; min-height: calc(100vh - 70px); }
 .copyright { font-size: 13px; color: #a0aec0; margin-top: 25px; }
 
 /* צ'אט צף */
-.floating-chat {
-    position: fixed; bottom: 30px; right: 30px;
-    background-color: #c53030;
-    color: white;
-    padding: 16px 26px;
-    border-radius: 35px;
-    font-weight: 700;
-    font-size: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    cursor: pointer; z-index: 2000;
-    display: flex; align-items: center; gap: 12px; text-decoration: none;
-}
+.floating-chat { position: fixed; bottom: 30px; right: 30px; background-color: #c53030; color: white; padding: 16px 26px; border-radius: 35px; font-weight: 700; font-size: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); cursor: pointer; z-index: 2000; display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .chat-icon-img { height: 24px; }
