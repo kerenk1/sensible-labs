@@ -34,8 +34,10 @@
                         <img src="8931b2_4c64e5be49b940e599e0486c4767ae89~mv2.png" alt="Get it on Google Play">
                     </div>
                 </div>
-                <div class="hero-mockups">
-                    <img src="8931b2_90be3345be114e9dae9c3e98f061b471~mv2.png" alt="Supernatural App Mockups" class="mockup-img">
+                
+                <div class="hero-mockups phone-track-container">
+                    <img src="gameplay.gif" alt="Animated Gameplay" class="gameplay-gif-layer">
+                    <img src="phones_track.png" alt="phones track background" class="mockup-img phone-track-base">
                 </div>
             </div>
 
@@ -219,16 +221,11 @@
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                // הסרת אקטיב מהלינקים
                 document.querySelectorAll('.nav-links a').forEach(item => item.classList.remove('active'));
                 this.classList.add('active');
-                
-                // הסתרת כל הסקשנים
                 const targetId = this.getAttribute('href');
                 document.querySelectorAll('.page-section').forEach(section => section.classList.add('hidden'));
                 document.querySelector(targetId).classList.remove('hidden');
-                
-                // גלילה חלקה לראש הדף
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
